@@ -26,8 +26,8 @@ module.exports = {
     BRANCH: 'master',
     HEROKU: {
         HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
-        API_KEY: process.env.HEROKU_API_KEY === undefined ? '' : process.env.HEROKU_API_KEY,
-        APP_NAME: process.env.HEROKU_APP_NAME === undefined ? '' : process.env.HEROKU_APP_NAME
+        API_KEY: process.env.HEROKU_API_KEY === undefined ? 'true' : process.env.HEROKU_API_KEY,
+        APP_NAME: process.env.HEROKU_APP_NAME === undefined ? 'true' : process.env.HEROKU_APP_NAME
     },
     DATABASE_URL: DATABASE_URL,
     DATABASE: DATABASE_URL === './whatsasena.db' ? new Sequelize({ dialect: "sqlite", storage: DATABASE_URL, logging: DEBUG }) : new Sequelize(DATABASE_URL,
